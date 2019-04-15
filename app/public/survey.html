@@ -10,6 +10,7 @@
       <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100,300,400"> -->
       <link href="https://fonts.googleapis.com/css?family=Lato|Montserrat|Playfair+Display|Raleway" rel="stylesheet">
       <!-- <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script> -->
+      <link rel="stylesheet" href="css/stylesurvey.css">
       <style>
         body {
           background-color: #f3f2f0
@@ -233,6 +234,32 @@
       </div>
     </div>
 
+    <div class="modal fade" id="results-todo" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="answer-all">ALL QUESTIONS NEED TO BE ANSWERED</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <!-- <div class="modal-body">
+              <div class="container-fluid">
+              <div class="row">
+                  <div class="col-md-10 ml-auto" id="containerMatch">
+                      <h5 id="match-name"></h5>
+                      <img id="match-img" class="col-md-12" style="max-height:400px" alt="picture of bet match">
+                  </div>
+                </div>
+              </div>
+          </div> -->
+          <div class="modal-footer">
+            <button type="button" class="btn btn-dark" data-dismiss="modal">OK</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
   <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
   <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
@@ -246,14 +273,16 @@
         required();
         function required() {
         if ($("#name").val() === "" || $("#photo").val() === "" || $(".questions").val() === "Select an Option") {
-        alert("Required Information")
+        // alert("Required Information")
+        $("#results-todo").modal("toggle");
+
       } else {
         submitData();
       }
     }
 
         function submitData() {
-          alert("SUBMITTED")
+          alert("SUBMITTING...")
       
         var userInput = {
           name: $("#name").val(),
@@ -283,10 +312,13 @@
 
           $("#results-modal").modal("toggle");
 
+        // $("#name").val("");
+        // $("#photo").val("");
+        // $(".questions").val("Select an Option");
+        }); //ok
         $("#name").val("");
         $("#photo").val("");
         $(".questions").val("Select an Option");
-        }); //ok
       } 
 
 
