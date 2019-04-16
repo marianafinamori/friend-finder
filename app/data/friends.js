@@ -21,6 +21,12 @@ var friendsArray = [
         "name": "Mia",
         "photo": "https://cdn.pixabay.com/photo/2016/07/26/22/28/young-1544115_1280.jpg",
         "scores": [5, 3, 4, 2, 5, 1, 2, 3, 5, 5]
+      },
+
+      {
+        "name": "Molly",
+        "photo": "https://cdn.pixabay.com/photo/2016/01/05/17/17/watch-1122956_1280.jpg",
+        "scores": [5, 2, 5, 3, 4, 1, 3, 1, 3, 5]
       }
 
 
